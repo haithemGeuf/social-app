@@ -20,14 +20,6 @@
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
 <div class="app">
     @guest
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-        </li>
-        @if (Route::has('register'))
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-            </li>
-        @endif
     @else
         <nav class="bg-gray-800">
             <div class=" mx-auto px-2 sm:px-6 lg:px-8">
