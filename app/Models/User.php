@@ -60,20 +60,20 @@ class User extends Authenticatable
 
     public function friends()
     {
-        return $this->belongsToMany(Profile::class, 'friends', 'profile_id1', 'profile_id2')
+        return $this->belongsToMany(User::class, 'friends', 'profile_id1', 'profile_id2')
             ->withTimestamps();
     }
 
     // send a message to a specific user this logic should be on the controller side but it is here for the testing purpose .
-    public function send_message(Profile $profile, $content)
+    public function send_message(User $User, $content)
     {
-        $this->messages_received()->attach($profile, ['content' => $content,]);
+        $this->messages_received()->attach($User, ['content' => $content,]);
     }
 
     // @return the messages sent by the user .
     public function messages_sent()
     {
-        return $this->belongsToMany(Profile::class, 'messages', 'receiver', 'sender')
+        return $this->belongsToMany(User::class, 'messages', 'receiver', 'sender')
             ->withTimestamps()
             ->withPivot('content');
     }
@@ -81,18 +81,18 @@ class User extends Authenticatable
     // @return the messages received to the user .
     public function messages_received()
     {
-        return $this->belongsToMany(Profile::class, 'messages', 'sender', 'receiver')
+        return $this->belongsToMany(User::class, 'messages', 'sender', 'receiver')
             ->withTimestamps()->withPivot('content');
     }
 
-    public function messages_received_from(Profile $profile)
+    public function messages_received_from(User $User)
     {
-        return $this->messages_received->where('id', $profile->id);
+        return $this->messages_received->where('id', $User->id);
     }
 
-    public function messages_sent_to(Profile $profile)
+    public function messages_sent_to(User $User)
     {
-        return $this->messages_sent->where('id', $profile->id);
+        return $this->messages_sent->where('id', $User->id);
     }
 
 }
