@@ -22,7 +22,12 @@ class ProfileFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => rand(1, 10),
+            'first_name' => $this->faker->firstName,
+            'last_name' => $this->faker->firstName,
+            'gender' => rand(0, 1),
+            'date_birth' => $this->faker->dateTimeInInterval('-50 years', '-15 years'),
+            'state' => rand(0, 1),
         ];
     }
 }
