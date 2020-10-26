@@ -64,9 +64,9 @@
                                     <a href="#"
                                        class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
                                        role="menuitem">Your Profile</a>
-                                    <a href="#"
+                                    <a href="{{route('user.edit',['user'=>auth()->user()->id])}}"
                                        class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
-                                       role="menuitem">Settings</a>
+                                       role="menuitem">Edit Profile</a>
                                     <a href="#"
                                        class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
                                        role="menuitem"
@@ -75,6 +75,7 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
+
                             </div>
                         </div>
                     </div>
