@@ -31,12 +31,13 @@
                         </div>
                         <div class="hidden sm:block sm:ml-6">
                             <div class="flex">
-                                <a href="#"
-                                   class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Products
-                                    List</a>
-                                <a href="#"
-                                   class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">New
-                                    Product</a>
+
+                                {{--                                the nav-bar elements --}}
+
+                                {{--                                <a href="#"--}}
+                                {{--                                   class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Products--}}
+                                {{--                                    List</a>--}}
+
                             </div>
                         </div>
                     </div>
